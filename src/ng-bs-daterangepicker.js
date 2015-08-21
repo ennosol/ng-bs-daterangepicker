@@ -19,7 +19,9 @@
 						return;
 					}
 
-					var options = {};
+					var options = {
+						autoUpdateInput: false
+					};
 					options.format = $attributes.format || 'YYYY-MM-DD';
 					options.separator = $attributes.separator || ' - ';
 					options.minDate = $attributes.minDate && moment($attributes.minDate);
