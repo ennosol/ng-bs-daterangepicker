@@ -63,7 +63,9 @@
 						return $attributes.ngModel;
 					}, function(modelValue, oldModelValue) {
 
-						if (!$scope[modelValue] || (!$scope[modelValue].startDate)) {
+						var val = $parse($attributes.ngModel)($scope);
+
+						if (!val || (!val.startDate)) {
 							ngModel.$setViewValue({
 								startDate: moment().startOf('day'),
 								endDate: moment().startOf('day')
@@ -75,8 +77,8 @@
 							return;
 						}
 
-						$element.data('daterangepicker').startDate = momentify($scope[modelValue].startDate);
-						$element.data('daterangepicker').endDate = momentify($scope[modelValue].endDate);
+						$element.data('daterangepicker').startDate = momentify(val.startDate);
+						$element.data('daterangepicker').endDate = momentify(val.endDate);
 						$element.data('daterangepicker').updateView();
 						$element.data('daterangepicker').updateCalendars();
 						$element.data('daterangepicker').updateInputText();
