@@ -59,6 +59,16 @@
 						$element.val(formatted(ngModel.$viewValue));
 					};
 
+					$attributes.$observe('ngModel', function (value) {
+						$scope.$watch(value, function (newValue) {
+							$element.data('daterangepicker').startDate = momentify(newValue.startDate);
+							$element.data('daterangepicker').endDate = momentify(newValue.endDate);
+							$element.data('daterangepicker').updateView();
+							$element.data('daterangepicker').updateCalendars();
+							$element.data('daterangepicker').updateInputText();
+						});
+					});
+
 					$scope.$watch(function() {
 						return $attributes.ngModel;
 					}, function(modelValue, oldModelValue) {
@@ -70,17 +80,6 @@
 							});
 							return;
 						}
-
-						if (oldModelValue !== modelValue) {
-							return;
-						}
-
-						$element.data('daterangepicker').startDate = momentify($scope[modelValue].startDate);
-						$element.data('daterangepicker').endDate = momentify($scope[modelValue].endDate);
-						$element.data('daterangepicker').updateView();
-						$element.data('daterangepicker').updateCalendars();
-						$element.data('daterangepicker').updateInputText();
-
 					});
 
 					$element.daterangepicker(options, function(start, end, label) {
