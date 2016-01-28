@@ -2,7 +2,7 @@ describe('the daterange directive', function() {
 
 	var $ngCompile, $ngRootScope;
 
-	beforeEach(module('ngBootstrap'));
+	beforeEach(module('lfzBootstrapDaterangepicker'));
 
 	beforeEach(inject(function($compile, $rootScope) {
 		$ngCompile = $compile;
@@ -10,13 +10,13 @@ describe('the daterange directive', function() {
 	}));
 
 	it('creates an instance of daterangepicker', function() {
-		var element = $ngCompile('<input type="daterange" ng-model="dummy">')($ngRootScope);
+		var element = $ngCompile('<input type="text" lfz-bootstrap-daterangepicker ng-model="dummy">')($ngRootScope);
 		expect(element.data('daterangepicker')).toBeDefined();
 	});
 
 	it('creates an instance with default values', function() {
 
-		var element = $ngCompile('<input type="daterange" ng-model="dummy">')($ngRootScope);
+		var element = $ngCompile('<input type="text" lfz-bootstrap-daterangepicker ng-model="dummy">')($ngRootScope);
 		$ngRootScope.$apply();
 
 		expect(element.data('daterangepicker').startDate.format('YYYY-MM-DD')).toBe(moment().format('YYYY-MM-DD'));
@@ -41,7 +41,7 @@ describe('the daterange directive', function() {
 			maxDate = '2013-09-25',
 			limitAmount = 1,
 			limitUnit = 'week',
-			element = $ngCompile('<input type="daterange" ng-model="dates" format="' + format + '" separator="' + separator + '" min-date="' + minDate + '" max-date="' + maxDate + '" limit="' + limitAmount + ' ' + limitUnit + '">')($ngRootScope);
+			element = $ngCompile('<input lfz-bootstrap-daterangepicker type="text" ng-model="dates" format="' + format + '" separator="' + separator + '" min-date="' + minDate + '" max-date="' + maxDate + '" limit="' + limitAmount + ' ' + limitUnit + '">')($ngRootScope);
 
 		$ngRootScope.dates = {
 			startDate: startDate,
@@ -68,7 +68,7 @@ describe('the daterange directive', function() {
 			'Yesterday': [moment().subtract(1, 'days').format('YYYY-MM-DD'), moment().subtract(1, 'days').format('YYYY-MM-DD')]
 		};
 
-		var element = $ngCompile('<input type="daterange" ng-model="dummy" ranges="ranges">')($ngRootScope);
+		var element = $ngCompile('<input lfz-bootstrap-daterangepicker type="text" ng-model="dummy" ranges="ranges">')($ngRootScope);
 
 		expect(element.data('daterangepicker').ranges.Today).not.toBeUndefined();
 		expect(element.data('daterangepicker').ranges.Today[0].format('YYYY-MM-DD')).toBe(moment().startOf('day').format('YYYY-MM-DD'));
@@ -80,7 +80,7 @@ describe('the daterange directive', function() {
 	});
 
 	it('passes opens option from attributes to daterangepicker instance', function() {
-		var element = $ngCompile('<input type="daterange" ng-model="dummy" opens="left">')($ngRootScope);
+		var element = $ngCompile('<input lfz-bootstrap-daterangepicker type="text" ng-model="dummy" opens="left">')($ngRootScope);
 		expect(element.data('daterangepicker').opens).toBe('left');
 	});
 

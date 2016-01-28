@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
-      files: ['src/ng-bs-daterangepicker.js', 'test/**/*.js']
+      files: ['src/lfz-bootstrap-daterangepicker.js', 'test/**/*.js']
     },
 
     karma: {
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
             'bower_components/bootstrap/dist/js/bootstrap.js',
             'bower_components/momentjs/min/moment.min.js',
             'bower_components/bootstrap-daterangepicker/daterangepicker.js',
-            'src/ng-bs-daterangepicker.js',
+            'src/lfz-bootstrap-daterangepicker.js',
             'test/**/*.js'
           ]
         }
@@ -36,13 +36,13 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         preserveComments: 'some',
-        sourceMap: 'dist/ng-bs-daterangepicker.min.js.map',
-        sourceMappingURL: 'ng-bs-daterangepicker.min.js.map',
+        sourceMap: 'dist/lfz-bootstrap-daterangepicker.min.js.map',
+        sourceMappingURL: 'lfz-bootstrap-daterangepicker.min.js.map',
         report: 'min'
       },
       dist: {
         files: {
-          'dist/ng-bs-daterangepicker.min.js': ['src/ng-bs-daterangepicker.js']
+          'dist/lfz-bootstrap-daterangepicker.min.js': ['src/lfz-bootstrap-daterangepicker.js']
         }
       }
     }
