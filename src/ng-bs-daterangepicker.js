@@ -68,6 +68,7 @@
 								startDate: moment().startOf('day'),
 								endDate: moment().startOf('day')
 							});
+							ngModel.$render();
 							return;
 						}
 
