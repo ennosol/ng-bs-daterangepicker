@@ -1,21 +1,21 @@
-lfz-bootstrap-daterangepicker
+ng-bs-daterangepicker
 ---
 
 Angular directive for Dan Grossman's [bootstrap-daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker).
 
-Demo: http://luisfarzati.github.io/lfz-bootstrap-daterangepicker
+Demo: http://luisfarzati.github.io/ng-bs-daterangepicker
 
 Installation
 ---
 
 Using bower:
 ```
-bower install lfz-bootstrap-daterangepicker
+bower install ng-bs-daterangepicker
 ```
 
 Using npm:
 ```
-npm install lfz-bootstrap-daterangepicker
+npm install ng-bs-daterangepicker
 ```
 
 How to use it
@@ -41,19 +41,19 @@ JavaScript:
 to the list above, you should add:
 
 ```html
-<script src="lfz-bootstrap-daterangepicker.js"></script>
+<script src="ng-bs-daterangepicker.js"></script>
 ```
 
-Then, inject `lfzBootstrapDaterangepicker` in your application module:
+Then, inject `ngBootstrap` in your application module:
 
 ```js
-angular.module('myApp', ['lfzBootstrapDaterangepicker']);
+angular.module('myApp', ['ngBootstrap']);
 ```
 
 and then just add an `input` of type `daterange`:
 
 ```html
-<input lfz-bootstrap-daterangepicker type="text" ng-model="myDateRange" />
+<input type="daterange" ng-model="myDateRange" />
 ```
 
 The result object `$scope.myDateRange` has a `startDate` and `endDate` properties, which are instances of `moment()`.
@@ -73,7 +73,7 @@ Example with all above features:
 
 ```html
 <input
-	lfz-bootstrap-daterangepicker
+	type="daterange"
 	ng-model="dates"
 	min-date="2013-09-10"
 	max-date="2013-09-25"
@@ -105,4 +105,4 @@ assuming you already have `grunt` installed, otherwise you also need to do:
 npm install -g grunt-cli
 ```
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/luisfarzati/lfz-bootstrap-daterangepicker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/luisfarzati/ng-bs-daterangepicker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
