@@ -1,9 +1,9 @@
 {
-  "name": "lfz-bootstrap-daterangepicker",
+  "name": "nsl-bootstrap-daterangepicker",
   "description": "AngularJS directive for bootstrap-daterangepicker",
   "version": "0.0.5",
-  "filename": "./src/lfz-bootstrap-daterangepicker.js",
-  "homepage": "http://github.com/luisfarzati/lfz-bootstrap-daterangepicker",
+  "filename": "./src/nsl-bootstrap-daterangepicker.js",
+  "homepage": "http://github.com/ennosol/nsl-bootstrap-daterangepicker",
   "author": {
     "name": "Luis Farzati",
     "email": "lfarzati@gmail.com",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/luisfarzati/lfz-bootstrap-daterangepicker.git"
+    "url": "git://github.com/ennosol/nsl-bootstrap-daterangepicker.git"
   },
   "keywords": [
     "angular",
@@ -24,7 +24,7 @@
     "calendar"
   ],
   "bugs": {
-    "url": "http://github.com/luisfarzati/lfz-bootstrap-daterangepicker/issues"
+    "url": "http://github.com/ennosol/nsl-bootstrap-daterangepicker/issues"
   },
   "dependencies": {
   },

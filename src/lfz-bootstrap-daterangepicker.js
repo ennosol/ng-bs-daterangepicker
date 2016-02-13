@@ -1,6 +1,7 @@
 /**
- * @license lfz-bootstrap-daterangepicker v0.0.5
- * (c) 2013 Luis Farzati http://github.com/luisfarzati/lfz-bootstrap-daterangepicker
+ * @license nsl-bootstrap-daterangepicker v0.0.5
+ * (c) 2013 Luis Farzati http://github.com/luisfarzati/ns-bs-daterangepicker
+ *     2016 Ennosol http://github.com/ennosol/nsl-bootstrap-daterangepicker
  * License: MIT
  */
 (function (angular) {
@@ -8,8 +9,8 @@
     'use strict';
 
     angular
-        .module('lfzBootstrapDaterangepicker', [])
-        .directive('lfzBootstrapDaterangepicker', ['$parse', '$filter', function ($parse, $filter) {
+        .module('nslBootstrapDaterangepicker', [])
+        .directive('nslBootstrapDaterangepicker', ['$parse', '$filter', function ($parse, $filter) {
             return {
                 restrict: 'AE',
                 require: '?ngModel',
@@ -59,6 +60,16 @@
                         element.val(formatted(ngModel.$viewValue));
                     };
 
+					attributes.$observe('ngModel', function (value) {
+						scope.$watch(value, function (newValue) {
+							element.data('daterangepicker').startDate = momentify(newValue.startDate);
+							element.data('daterangepicker').endDate = momentify(newValue.endDate);
+							element.data('daterangepicker').updateView();
+							element.data('daterangepicker').updateCalendars();
+							element.data('daterangepicker').updateInputText();
+						});
+					});
+
                     scope.$watch(function () {
                         return attributes.ngModel;
                     }, function (modelValue, oldModelValue) {
@@ -67,18 +78,9 @@
                                 startDate: moment().startOf('day'),
                                 endDate: moment().startOf('day')
                             });
+                            ngModel.$render();
                             return;
                         }
-
-                        if (oldModelValue !== modelValue) {
-                            return;
-                        }
-
-                        element.data('daterangepicker').startDate = momentify(scope[modelValue].startDate);
-                        element.data('daterangepicker').endDate = momentify(scope[modelValue].endDate);
-                        element.data('daterangepicker').updateView();
-                        element.data('daterangepicker').updateCalendars();
-                        element.data('daterangepicker').updateInputText();
                     });
 
                     element.daterangepicker(options, function (start, end) {

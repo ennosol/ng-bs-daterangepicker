@@ -17,47 +17,47 @@
 
 			<div class="well">
                 <p>dates1 = <code>{{dates1|json}}</code></p>
-				<pre>&lt;input lfz-bootstrap-daterangepicker type="text" ng-model="dates1"&gt;</pre>
-				<input lfz-bootstrap-daterangepicker type="text" ng-model="dates1">
+				<pre>&lt;input nsl-bootstrap-daterangepicker type="text" ng-model="dates1"&gt;</pre>
+				<input nsl-bootstrap-daterangepicker type="text" ng-model="dates1">
 			</div>
 			<div class="well">
                 <p>dates2 = <code>{{dates2|json}}</code></p>
-				<pre>&lt;input lfz-bootstrap-daterangepicker type="text" ng-model="dates2" format="MMM DD" separator="/"&gt;</pre>
-				<input lfz-bootstrap-daterangepicker type="text" ng-model="dates2" format="MMM DD" separator="/">
+				<pre>&lt;input nsl-bootstrap-daterangepicker type="text" ng-model="dates2" format="MMM DD" separator="/"&gt;</pre>
+				<input nsl-bootstrap-daterangepicker type="text" ng-model="dates2" format="MMM DD" separator="/">
 			</div>
 			<div class="well">
                 <p>dates3 = <code>{{dates3|json}}</code></p>
-				<pre>&lt;input lfz-bootstrap-daterangepicker type="text" ng-model="dates3" separator="/" min-date="2013-09-10" max-date="2013-09-20" limit="1 day"&gt;</pre>
-				<input lfz-bootstrap-daterangepicker type="text" ng-model="dates3" separator="/" min-date="2013-09-10" max-date="2013-09-20" limit="1 day">
+				<pre>&lt;input nsl-bootstrap-daterangepicker type="text" ng-model="dates3" separator="/" min-date="2013-09-10" max-date="2013-09-20" limit="1 day"&gt;</pre>
+				<input nsl-bootstrap-daterangepicker type="text" ng-model="dates3" separator="/" min-date="2013-09-10" max-date="2013-09-20" limit="1 day">
 			</div>
 			<div class="well">
                 <p>dates4 = <code>{{dates4|json}}</code></p>
-				<pre>&lt;input lfz-bootstrap-daterangepicker type="text" ng-model="dates4" ranges="ranges"&gt;</pre>
-				<input lfz-bootstrap-daterangepicker type="text" ng-model="dates4" ranges="ranges">
+				<pre>&lt;input nsl-bootstrap-daterangepicker type="text" ng-model="dates4" ranges="ranges"&gt;</pre>
+				<input nsl-bootstrap-daterangepicker type="text" ng-model="dates4" ranges="ranges">
 			</div>
 
 			<h2>Element Example</h2>
 			<div class="well">
                 <p>dates5 = <code>{{dates5|json}}</code></p>
 				<pre>
-&lt;lfz-bootstrap-daterangepicker type="text" ng-model="dates1"&gt;
+&lt;nsl-bootstrap-daterangepicker type="text" ng-model="dates1"&gt;
     <span>{{ </span>dates5.startDate.format()|date : 'short' }} to <span>{{ </span> dates5.endDate.format()|date : 'short' }}
-&lt;/lfz-bootstrap-daterangepicker&gt;
+&lt;/nsl-bootstrap-daterangepicker&gt;
                 </pre>
-				<lfz-bootstrap-daterangepicker type="text" ng-model="dates5">
+				<nsl-bootstrap-daterangepicker type="text" ng-model="dates5">
                     {{dates5.startDate.format()|date : 'short' }} to {{ dates5.endDate.format()|date : 'short' }}
-				</lfz-bootstrap-daterangepicker>
+				</nsl-bootstrap-daterangepicker>
 			</div>
 
 			<h2>Button Example</h2>
 			<div class="well">
                 <p>dates6 = <code>{{dates6|json}}</code></p>
 				<pre>
-&lt;lfz-bootstrap-daterangepicker type="text" ng-model="dates1"&gt;
+&lt;nsl-bootstrap-daterangepicker type="text" ng-model="dates1"&gt;
     <span>{{ </span>dates6.startDate.format()|date : 'short' }} to <span>{{ </span> dates6.endDate.format()|date : 'short' }}
-&lt;/lfz-bootstrap-daterangepicker&gt; <span>{{</span>dates6|json}}
+&lt;/nsl-bootstrap-daterangepicker&gt; <span>{{</span>dates6|json}}
                 </pre>
-				<button class="btn btn-primary" type="text" lfz-bootstrap-daterangepicker ng-model="dates1">
+				<button class="btn btn-primary" type="text" nsl-bootstrap-daterangepicker ng-model="dates1">
 					{{ dates6.startDate.format()|date : 'short' }} to {{ dates6.endDate.format()|date : 'short' }}
 				</button>
 			</div>
@@ -69,11 +69,11 @@
 		<script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 		<script src="../bower_components/angular/angular.js"></script>
 
-		<script src="../src/lfz-bootstrap-daterangepicker.js"></script>
+		<script src="../src/nsl-bootstrap-daterangepicker.js"></script>
 
 		<script>
 			angular
-				.module('demo', ['lfzBootstrapDaterangepicker'])
+				.module('demo', ['nslBootstrapDaterangepicker'])
 				.controller('SampleCtrl', function($scope) {
 						$scope.dates2 = { startDate: moment('2013-09-20'), endDate: moment('2013-09-25') };
 						$scope.dates3 = { startDate: moment(), endDate: moment().add(1, 'day') };
